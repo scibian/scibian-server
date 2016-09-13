@@ -1,0 +1,120 @@
+Source: scibian-server
+Section: edf
+Priority: optional
+Maintainer: Scibian Packaging Team <packaging@scibian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+
+Package: scibian-server-standard
+Architecture: all
+Depends: scibian-standard, 
+     acpi-support, cgroup-bin, cracklib-runtime,
+     cron, ifenslave, firmware-bnx2, grub-pc | grub-efi, lvm2,
+     libpam-pwquality, nagios-nrpe-server, nagios-plugins-basic,
+     nfs-common, sysfsutils, sudo, parted, scibian-fusioninventory-agent
+Description: Scibian metapackage for basic server
+ Scibian metapackage for basic server
+
+Package: scibian-server-session
+Architecture: all
+Depends: scibian-server-standard (= ${binary:Version}), scibian-desktop
+Description: Scibian metapackage for server with GNOME
+ Scibian metapackage for server with GNOME desktop environment
+
+Package: scibian-server-compute
+Architecture: all
+Depends: scibian-server-standard (= ${binary:Version}), scibian-compute (= ${binary:Version})
+Description: Scibian metapackage for compute server
+ Scibian metapackage for compute server
+
+Package: scibian-ofed
+Architecture: all
+Depends: ibutils, ibverbs-utils, infiniband-diags, libibcm1, libibdm1, libibmad5, libibumad3,
+     libibverbs1, libipathverbs1, libmlx4-1, libmthca1, libnes1, librdmacm1, rdmacm-utils
+Description: Scibian metapackage for OFED distribution
+ Scibian metapackage for OFED distribution
+
+Package: scibian-ofed-devel
+Architecture: all
+Depends: libibcm-dev, libibdm-dev, libibmad-dev, libibumad-dev, libibverbs-dev,
+     libopensm-dev, librdmacm-dev
+Description: Scibian metapackage for OFED development
+ Scibian metapackage for OFED development
+
+Package: scibian-compute
+Architecture: all
+Depends: scibian-standard,
+ ace-gperf, apt, at, autoconf, binfmt-support, binutils, bison, bzip2, cli-common, coinor-csdp,
+ coinor-libcbc3, coinor-libcgl1, coinor-libclp1, coinor-libcoinutils3, coinor-libdylp0, coinor-libflopc++0,
+ coinor-libipopt1, coinor-libosi1, coinor-libsymphony3, coinor-libvol0, consolekit,
+ ed, exim4, exim4-base, exim4-config, exim4-daemon-light, fontconfig,
+ fontconfig-config, ganglia-monitor, gfortran, gperf, gsfonts, hdf5-tools, htop, multiarch-support, itcl3, ksh,
+ lksctp-tools, lockfile-progs, lp-solve, ltrace, make, mpi-default-bin, mtools, netcdf-bin, 
+ numactl, ocaml-base-nox, opari, pciutils,
+ pkg-config, psmisc, ptscotch, pyflakes, pyro, python, python-chardet, python-coverage,
+ python-crypto, python-dateutil, python-egenix-mxdatetime, python-egenix-mxtools, python-gobject, python-imaging,
+ python-jinja2, python-logilab-astng, python-logilab-common, python-lxml, python-markupsafe, python-minimal,
+ python-mpi, python-netcdf, python-nose, python-numpy, python-omniorb, python-omniorb-omg, python-openssl,
+ python-pam, python-pkg-resources, python-pmw, python-pp, python-pyasn1,
+ python-pygments, python-pyparsing, python-pyx, python-qt4, python-roman, python-scientific, python-scipy,
+ python-serial, python-setuptools, python-sip, python-support, python-tables, python-tk,
+ python-twisted, python-twisted-bin, python-twisted-conch, python-twisted-core, python-twisted-lore,
+ python-twisted-mail, python-twisted-names, python-twisted-news, python-twisted-runner, python-twisted-web,
+ python-twisted-words, python-tz, python-vtk6, qt4-qtconfig, realpath, ruby, 
+ scotch, sgml-base, sgml-data, shared-mime-info, strace, swig, swish++, syrthes, tao-concurrency,
+ tao-cosconcurrency, tao-cosevent, tao-coslifecycle, tao-cosnaming, tao-cosnotification, tao-costime,
+ tao-costrading, tao-event, tao-ft, tao-idl, tao-ifr, tao-imr, tao-lifecycle, tao-log, tao-naming, tao-notify,
+ tao-scheduling, tao-time, tao-tls, tao-trading, tao-utils, tcl, tcl8.5, tclx8.4, tcsh, tdom, tk, tk8.5,
+ ttf-dejavu, ttf-dejavu-core, ttf-dejavu-extra, ttf-liberation, unzip, update-inetd, valgrind, vbetool,
+ vite, xml-core, zip, gfortran-4.9-multilib, lib32gfortran3, xauth 
+Description: Auxiliary Scibian metapackage for computational clusters
+ Auxiliary Scibian metapackage for computational clusters
+
+Package: scibian-compute-devel
+Architecture: all
+Depends: scibian-compute (= ${binary:Version}),
+ autotools-dev, binutils-dev, coinor-libcbc-dev, coinor-libcgl-dev, coinor-libclp-dev,
+ coinor-libcoinutils-dev, coinor-libdylp-dev, coinor-libflopc++-dev, coinor-libipopt-dev, coinor-libosi-dev,
+ coinor-libsymphony-dev, coinor-libvol-dev, libace-dev, libace-ssl-dev, libacexml-dev,
+ libatlas-base-dev, libatlas-dev, libblacs-mpi-dev, libblas-dev, libboost-all-dev, libboost-date-time-dev,
+ libboost-date-time-dev, libboost-dev, libboost-filesystem-dev, libboost-filesystem-dev,
+ libboost-graph-dev, libboost-graph-parallel-dev, libboost-graph-parallel-dev, libboost-graph-dev,
+ libboost-iostreams-dev, libboost-iostreams-dev, libboost-math-dev, libboost-math-dev, libboost-mpi-dev,
+ libboost-mpi-python-dev, libboost-mpi-dev, libboost-program-options-dev, libboost-program-options-dev,
+ libboost-python-dev, libboost-python-dev, libboost-regex-dev, libboost-regex-dev, libboost-serialization-dev,
+ libboost-serialization-dev, libboost-signals-dev, libboost-signals-dev, libboost-system-dev,
+ libboost-system-dev, libboost-test-dev, libboost-test-dev, libboost-thread-dev, libboost-thread-dev,
+ libboost-wave-dev, libboost-wave-dev, libboost-dev, libc-dev-bin, libc6-dev, libc6-dev-i386,
+ libexpat1-dev, libf2c2-dev, libfftw3-dev, libfontconfig1-dev, libfreetype6-dev, libhdf5-mpi-dev, libhdf5-openmpi-dev,
+ libhypre-dev, libibverbs-dev, libice-dev, libicu-dev, libjpeg62-turbo-dev, libncurses5-dev, libopenmpi-dev,
+ libparmetis-dev, libpetsc3.4.2-dev, libpthread-stubs0-dev,
+ libreadline-dev, libreadline6-dev, libscalapack-mpi-dev, libscotch-dev, libsm-dev, libspooles-dev, libssl-dev,
+ libstdc++-4.9-dev, libsuitesparse-dev, libsuperlu-dev, libtao-dev, libtao-orbsvcs-dev,
+ libx11-dev, libxau-dev, libxcb1-dev, libxdmcp-dev, libxext-dev, libxft-dev, libxml2-dev, libxp-dev, libxrender-dev,
+ libxt-dev, linux-libc-dev, mpi-default-dev, petsc-dev, pvm-dev, python-dev, python-sip-dev,
+ tcl8.5-dev, tcl-dev, tclx8.4-dev, x11proto-core-dev, x11proto-input-dev, x11proto-kb-dev, x11proto-print-dev,
+ x11proto-render-dev, x11proto-xext-dev, xtrans-dev, zlib1g-dev
+Description: Auxiliary Scibian metapackage for computational clusters - development
+ Auxiliary Scibian metapackage for computational clusters - development
+
+Package: scibian-server-lamp
+Architecture: all
+Depends: scibian-server-standard (= ${binary:Version}), apache2, apache2-mpm-prefork, mysql-server, php5-mysql, libapache2-mod-php5,
+ libpam-mkhomedir-scibian, makepasswd, nfs-common, parted, screen, zsh
+Recommends: popularity-contest
+Description: Scibian metapackage for LAMP server
+ Scibian metapackage for LAMP server
+
+Package: scibian-hpc-frontend
+Architecture: all
+Depends: scibian-compute-devel (= ${binary:Version}), scibian-ofed-devel (= ${binary:Version}),
+ libpam-mkhomedir-scibian, makepasswd, nfs-common, parted, screen, zsh
+Recommends: popularity-contest
+Description: Scibian metapackage for HPC frontend
+ Scibian metapackage for HPC frontend
+
+Package: scibian-hpc-node
+Architecture: all
+Depends: scibian-compute (= ${binary:Version}), scibian-ofed (= ${binary:Version})
+Description: Scibian metapackage for HPC nodes
+ Scibian metapackage for HPC nodes

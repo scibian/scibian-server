@@ -1,0 +1,11 @@
+Name: Scibian server configuration
+Default: yes
+Priority: 255
+Account-Type: Additional
+Account:
+        required pam_access.so
+Session-Type: Additional
+Session:
+        optional pam_umask.so
+Session-Initial:
+        optional pam_umask.so
